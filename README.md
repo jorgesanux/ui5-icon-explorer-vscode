@@ -1,7 +1,7 @@
 # UI5 Icon Explorer - VSCode extension
 
 <p align="center">
-  <img width="200" src="./logo.png">
+  <img width="200" src="./docs/imgs/logo.png">
 </p>
 
 This extension allows you to explore SAPUI5 icons in a convenient way, similar to the SAPUI5 Icon Explorer. It provides the capability to filter icons and copy their values in different formats, including Unicode, the `sap-icon` protocol, and the symbol.

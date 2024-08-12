@@ -4,6 +4,7 @@
   "description": "UI5 Icon explorer extension for Visual Studio Code that allows you to explore and copy UI5 icons. It also provides the SAP URI, Symbol, and Unicode of the selected icon.",
   "version": "1.0.0",
   "publisher": "jorgesanux",
+  "repository": "https://github.com/jorgesanux/ui5-icon-explorer-vscode",
   "engines": {
     "vscode": "^1.91.0"
   },
@@ -27,7 +28,7 @@
     "color": "#007ACC",
     "theme": "dark"
   },
-  "icon": "logo.png",
+  "icon": "./docs/imgs/logo.png",
   "contributes": {
     "commands": [
       {
