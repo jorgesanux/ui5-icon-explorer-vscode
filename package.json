@@ -1,0 +1,143 @@
+{
+  "name": "ui5-icon-explorer",
+  "displayName": "UI5 Icon Explorer",
+  "description": "UI5 Icon explorer extension for Visual Studio Code that allows you to explore and copy UI5 icons. It also provides the SAP URI, Symbol, and Unicode of the selected icon.",
+  "version": "1.0.0",
+  "publisher": "jorgesanux",
+  "engines": {
+    "vscode": "^1.91.0"
+  },
+  "author": {
+    "name": "Jorge Sanabria",
+    "email": "jorgesanux1@gmail.com"
+  },
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "sapui5",
+    "ui5",
+    "icon",
+    "explorer",
+    "sap"
+  ],
+  "activationEvents": [],
+  "browser": "./dist/web/extension.js",
+  "galleryBanner": {
+    "color": "#007ACC",
+    "theme": "dark"
+  },
+  "icon": "logo.png",
+  "contributes": {
+    "commands": [
+      {
+        "command": "ui5IconExplorer.copyOption.sapURI",
+        "title": "SAP URI"
+      },
+      {
+        "command": "ui5IconExplorer.copyOption.symbol",
+        "title": "Symbol"
+      },
+      {
+        "command": "ui5IconExplorer.copyOption.unicode",
+        "title": "Unicode"
+      }
+    ],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "ui5IconExplorerViewContainerBar",
+          "title": "UI5 Icon Explorer",
+          "icon": "dist/web/resources/img/logo.svg"
+        }
+      ]
+    },
+    "views": {
+      "ui5IconExplorerViewContainerBar": [
+        {
+          "id": "ui5IconExplorerWebView",
+          "name": "",
+          "type": "webview"
+        }
+      ]
+    },
+    "submenus": [
+      {
+        "id": "ui5IconExplorer.submenu.copyOption",
+        "label": "Copy"
+      }
+    ],
+    "menus": {
+      "commandPalette": [
+        {
+          "command": "ui5IconExplorer.copyOption.sapURI",
+          "when": "false"
+        },
+        {
+          "command": "ui5IconExplorer.copyOption.symbol",
+          "when": "false"
+        },
+        {
+          "command": "ui5IconExplorer.copyOption.unicode",
+          "when": "false"
+        }
+      ],
+      "webview/context": [
+        {
+          "submenu": "ui5IconExplorer.submenu.copyOption",
+          "when": "webviewId == 'ui5IconExplorerWebView' && webviewSection == 'iconCard'"
+        }
+      ],
+      "ui5IconExplorer.submenu.copyOption": [
+        {
+          "command": "ui5IconExplorer.copyOption.sapURI",
+          "when": "webviewId == 'ui5IconExplorerWebView'"
+        },
+        {
+          "command": "ui5IconExplorer.copyOption.symbol",
+          "when": "webviewId == 'ui5IconExplorerWebView'"
+        },
+        {
+          "command": "ui5IconExplorer.copyOption.unicode",
+          "when": "webviewId == 'ui5IconExplorerWebView'"
+        }
+      ]
+    }
+  },
+  "qna": "marketplace",
+  "extensionKind": [
+    "ui",
+    "workspace"
+  ],
+  "pricing": "Free",
+  "scripts": {
+    "test": "vscode-test-web --browserType=chromium --extensionDevelopmentPath=. --extensionTestsPath=dist/web/test/suite/index.js",
+    "pretest": "npm run compile-web",
+    "vscode:prepublish": "npm run package-web",
+    "compile-web": "webpack",
+    "watch-web": "webpack --watch",
+    "package-web": "webpack --mode production --devtool hidden-source-map",
+    "lint": "eslint src --ext ts",
+    "run-in-browser": "vscode-test-web --browserType=chromium --extensionDevelopmentPath=. ."
+  },
+  "devDependencies": {
+    "@types/assert": "^1.5.10",
+    "@types/mocha": "^10.0.7",
+    "@types/vscode": "^1.91.0",
+    "@types/webpack-env": "^1.18.5",
+    "@typescript-eslint/eslint-plugin": "^7.14.1",
+    "@typescript-eslint/parser": "^7.11.0",
+    "@vscode/codicons": "^0.0.36",
+    "@vscode/test-web": "^0.0.55",
+    "@vscode/vsce": "^2.31.1",
+    "assert": "^2.1.0",
+    "copy-webpack-plugin": "^12.0.2",
+    "eslint": "^8.57.0",
+    "mocha": "^10.5.2",
+    "process": "^0.11.10",
+    "ts-loader": "^9.5.1",
+    "typescript": "^5.4.5",
+    "webpack": "^5.92.1",
+    "webpack-cli": "^5.1.4"
+  }
+}
