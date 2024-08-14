@@ -13,3 +13,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Context menu for copying icons
 - Icon tags on hover
 - Support of SAP Icons font
+
+
+## [1.0.1] - 2024-08-14
+
+### Added
+- Entry point for desktop environments
+- Content security police for static resources.
+- Nonce generation
