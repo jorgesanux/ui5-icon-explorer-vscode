@@ -158,7 +158,6 @@ class UI5IconExplorerProvider implements vscode.WebviewViewProvider {
 	}
 
 	private async readIndexHtml(): Promise<string> {
-		console.log(this._extensionUri);
 		const htmlPath = vscode.Uri.joinPath(this._extensionUri, "dist/web/resources/index.html");
 		const htmlFile = await vscode.workspace.fs.readFile(htmlPath);
 		const textDecoder = new TextDecoder();
