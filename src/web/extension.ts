@@ -170,11 +170,14 @@ class UI5IconExplorerProvider implements vscode.WebviewViewProvider {
 		const jsScriptMainUri = this.constructResourceUri("dist/web/resources/js/main.js");
 		const cssMain = this.constructResourceUri("dist/web/resources/css/main.css");
 		const cssCodicons = this.constructResourceUri("dist/web/resources/css/codicon.css");
+		const nonce = getNonce();
 
 		return htmlFile
 			.replace("{cssMain}", cssMain?.toString() || "")
 			.replace("{cssCodicons}", cssCodicons?.toString() || "")
-			.replace("{jsScriptMainUri}", jsScriptMainUri?.toString() || "");
+			.replace("{jsScriptMainUri}", jsScriptMainUri?.toString() || "")
+			.replace(/\{webview.cspSource\}/g, this._view?.webview.cspSource || "")
+			.replace(/\{nonce\}/g, nonce);
 	}
 
 	public resolveWebviewView(
@@ -202,4 +205,13 @@ class UI5IconExplorerProvider implements vscode.WebviewViewProvider {
 			this.messageReceiver(receivedMessage as MessageData);
 		});
 	}
+}
+
+function getNonce() {
+	let nonce = '';
+	const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+	for (let i = 0; i < 64; i++) {
+		nonce += chars.charAt(Math.floor(Math.random() * chars.length));
+	}
+	return nonce;
 }
