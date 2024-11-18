@@ -710,6 +710,7 @@ export const icons: SAPIconList = {
 	'da-2': 0x1e2a4,
 	'ai': 0x1e2a5,
 	'in-progress-2': 0x1e2a6,
+	'unsynchronize': 0x1e2a7,
 	'gender-male-and-female': 0x1e300,
 	'rotate': 0xe301,
 	'locate-me-2': 0xe302,
