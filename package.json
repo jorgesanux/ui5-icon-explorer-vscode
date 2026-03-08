@@ -2,11 +2,11 @@
   "name": "ui5-icon-explorer",
   "displayName": "UI5 Icon Explorer",
   "description": "UI5 Icon explorer extension for Visual Studio Code that allows you to explore and copy UI5 icons. It also provides the SAP URI, Symbol, and Unicode of the selected icon.",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "publisher": "jorgesanux",
   "repository": "https://github.com/jorgesanux/ui5-icon-explorer-vscode",
   "engines": {
-    "vscode": "^1.91.0"
+    "vscode": "^1.95.0"
   },
   "author": {
     "name": "Jorge Sanabria",
@@ -120,26 +120,34 @@
     "watch-web": "webpack --watch",
     "package-web": "webpack --mode production --devtool hidden-source-map",
     "lint": "eslint src --ext ts",
-    "run-in-browser": "vscode-test-web --browserType=chromium --extensionDevelopmentPath=. ."
+    "run-in-browser": "vscode-test-web --browserType=chromium --extensionDevelopmentPath=. .",
+    "publish-vsce": "vsce publish",
+    "publish-ovsx": "ovsx publish"
   },
   "devDependencies": {
     "@types/assert": "^1.5.10",
-    "@types/mocha": "^10.0.7",
-    "@types/vscode": "^1.91.0",
+    "@types/mocha": "^10.0.10",
+    "@types/vscode": "^1.95.0",
     "@types/webpack-env": "^1.18.5",
-    "@typescript-eslint/eslint-plugin": "^7.14.1",
-    "@typescript-eslint/parser": "^7.11.0",
-    "@vscode/codicons": "^0.0.36",
-    "@vscode/test-web": "^0.0.63",
-    "@vscode/vsce": "^2.31.1",
+    "@typescript-eslint/eslint-plugin": "^8.56.1",
+    "@typescript-eslint/parser": "^8.56.1",
+    "@vscode/codicons": "^0.0.44",
+    "@vscode/test-web": "^0.0.80",
+    "@vscode/vsce": "^3.7.1",
     "assert": "^2.1.0",
-    "copy-webpack-plugin": "^12.0.2",
-    "eslint": "^8.57.0",
-    "mocha": "^10.5.2",
+    "copy-webpack-plugin": "^14.0.0",
+    "eslint": "^8.57.1",
+    "mocha": "^11.7.5",
+    "ovsx": "^0.10.9",
     "process": "^0.11.10",
     "ts-loader": "^9.5.1",
-    "typescript": "^5.4.5",
-    "webpack": "^5.96.1",
+    "typescript": "^5.9.3",
+    "webpack": "^5.105.4",
     "webpack-cli": "^5.1.4"
+  },
+  "overrides": {
+    "minimatch": "^3.1.5",
+    "diff": "^8.0.3",
+    "serialize-javascript": "^7.0.4"
   }
 }
