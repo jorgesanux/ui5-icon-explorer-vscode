@@ -5,6 +5,32 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.2.0] - 2026-03-08
+
+### Security
+- Fixed 23 vulnerabilities (6 low, 4 moderate, 11 high, 2 critical) by upgrading all devDependencies.
+- Applied `npm overrides` to force secure versions of `minimatch`, `diff`, and `serialize-javascript` in transitive dependencies.
+
+### Changed
+- **engines.vscode**: Updated minimum required VS Code version from `^1.91.0` to `^1.95.0`.
+- **@vscode/vsce**: Updated from `^2.31.1` to `^3.7.1` (major version upgrade with improved publishing support).
+- **typescript**: Updated from `^5.4.5` to `^5.9.3`.
+- **webpack**: Updated from `^5.96.1` to `^5.105.4` (fixes SSRF vulnerability in `buildHttp`).
+- **eslint**: Updated from `^8.57.0` to `^8.57.1`.
+- **@typescript-eslint/eslint-plugin** and **@typescript-eslint/parser**: Updated from `^7.x` to `^8.56.1`.
+- **@types/vscode**: Updated from `^1.91.0` to `^1.95.0`.
+- **@vscode/test-web**: Updated from `^0.0.63` to `^0.0.80`.
+- **@vscode/codicons**: Updated from `^0.0.36` to `^0.0.44` (includes newer codicons).
+- **mocha**: Updated from `^10.5.2` to `^11.7.5`.
+- **copy-webpack-plugin**: Updated from `^12.0.2` to `^14.0.0`.
+- **@types/mocha**: Updated from `^10.0.7` to `^10.0.10`.
+- Updated ESLint config: replaced removed `@typescript-eslint/semi` rule with the base `semi` rule (required by `@typescript-eslint` v8).
+
+### Added
+- **ovsx** (`^0.10.9`): Added the Open VSX Registry CLI tool as a devDependency.
+- `publish-vsce` script: Publishes the extension to the VS Code Marketplace using `vsce publish`.
+- `publish-ovsx` script: Publishes the extension to the Open VSX Registry using `ovsx publish`.
+
 ## [1.1.0] - 2024-11-18
 
 ### Changed
