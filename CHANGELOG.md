@@ -5,6 +5,28 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.3.0] - 2026-08-18
+
+### Changed
+- Updated the extension toolchain to latest compatible releases:
+  - `@types/assert` → `^1.5.11`
+  - `@types/vscode` → `^1.125.0`
+  - `@types/webpack-env` → `^1.18.8`
+  - `@typescript-eslint/eslint-plugin` and `@typescript-eslint/parser` → `^8.67.0`
+  - `@vscode/test-web` → `^0.0.81`
+  - `@vscode/vsce` → `^3.9.2`
+  - `mocha` → `^11.8.0`
+  - `ovsx` → `^1.1.1`
+  - `ts-loader` → `^9.6.2`
+  - `webpack` → `^5.109.2`
+- Updated `engines.vscode` from `^1.95.0` to `^1.125.0` to align with the new `@types/vscode` and packaging requirements.
+
+### Security
+- Regenerated lockfile and dependency tree to remove known vulnerabilities (`npm audit` now reports 0 vulnerabilities).
+
+### Compatibility
+- Validated packaging flow with both Marketplace/OpenVSX tooling (`@vscode/vsce` and `ovsx` CLI).
+
 ## [1.2.0] - 2026-03-08
 
 ### Security
